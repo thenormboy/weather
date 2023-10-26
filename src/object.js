@@ -32,22 +32,36 @@ const today = {
 
     date : null,
 
+    get getDate() {
+        return this.date
+    },
+
+    set setDate(newDate) {
+        this.date = newDate
+    },
+
     mainInfo : {
         icon : null,
-        temperature : null,
+        temperatureC : null,
+        temperatureF : null,
         condition : null,
         highTempC : null,
         lowTempC : null,
         highTempF : null,
         lowTempF : null,
-        feelsLike : null,
+        feelsLikeC : null,
+        feelsLikeF : null,
 
         get getIcon() {
             return this.icon
         },
 
-        get getTemperature() {
-            return this.temperature
+        get getTemperatureC() {
+            return this.temperatureC
+        },
+
+        get getTemperatureF() {
+            return this.temperatureF
         },
 
         get getCondition() {
@@ -70,16 +84,24 @@ const today = {
             return this.lowTempF
         },
 
-        get getFeelsLike() {
-            return this.feelsLike
+        get getFeelsLikeC() {
+            return this.feelsLikeC
+        },
+
+        get getFeelsLikeF() {
+            return this.feelsLikeF
         },
 
         set setIcon(newIcon) {
             this.icon = newIcon
         },
 
-        set setTemperature(newTemp) {
-            this.temperature = newTemp
+        set setTemperatureC(newTempC) {
+            this.temperatureC = newTempC
+        },
+
+        set setTemperatureF(newTempF) {
+            this.temperatureF = newTempF
         },
 
         set setCondition(newCondition) {
@@ -102,22 +124,31 @@ const today = {
             this.lowTempF = newLowTempF
         },
 
-        set setFeelsLike(newFeelsLike) {
-            this.feelsLike = newFeelsLike
+        set setFeelsLikeC(newFeelsLikeC) {
+            this.feelsLikeC = newFeelsLikeC
+        },
+
+        set setFeelsLikeF(newFeelsLikeF) {
+            this.feelsLikeF = newFeelsLikeF
         }
 
     },
 
     otherInfo : {
-        wind : null,
+        windkph : null,
+        windmph : null,
         precip : null,
         humidity : null,
         uvIndex : null,
         sunrise : null,
         sunset : null,
 
-        get getWind() {
-            return this.wind
+        get getWindKph() {
+            return this.windkph
+        },
+
+        get getWindMph() {
+            return this.windmph
         },
 
         get getPrecip() {
@@ -140,8 +171,12 @@ const today = {
             return this.sunset
         },
 
-        set setWind(newWind) {
-            this.wind = newWind
+        set setWindKph(newWindKph) {
+            this.windkph = newWindKph
+        },
+
+        set setWindMph(newWindMph) {
+            this.windmph = newWindMph
         },
 
         set setPrecip(newPrecip) {
@@ -233,4 +268,4 @@ const otherDays = {
 
 }
 
-export { today }
+export { today, otherDays }

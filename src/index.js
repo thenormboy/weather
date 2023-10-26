@@ -1,4 +1,5 @@
 import "./style.css"
-import { getWeather } from './weather'
+import { getForecastWeather, getCurrentWeather } from './weather'
 
-getWeather()
+getForecastWeather()
+getCurrentWeather()
