@@ -201,7 +201,7 @@ const today = {
     }
 }
 
-const otherDays = {
+const tomorrow = {
     header : null,
     icon : null,
     highTempC : null,
@@ -268,4 +268,72 @@ const otherDays = {
 
 }
 
-export { today, otherDays }
+const nextday = {
+    header : null,
+    icon : null,
+    highTempC : null,
+    lowTempC : null,
+    highTempF : null,
+    lowTempF : null,
+    precip : null,
+
+    get getHeader() {
+        return this.header
+    },
+
+    get getIcon() {
+        return this.icon
+    },
+
+    get getHighTempC() {
+        return this.highTempC
+    },
+
+    get getLowTempC() {
+        return this.lowTempC
+    },
+
+    get getHighTempF() {
+        return this.highTempF
+    },
+
+    get getLowTempF() {
+        return this.lowTempF
+    },
+
+    get getPrecip() {
+        return this.precip
+    },
+
+    set setHeader(newHeader) {
+        this.header = newHeader
+    },
+
+    set setIcon(newIcon) {
+        this.icon = newIcon
+    },
+
+    set setHighTempC(newHighTempC) {
+        this.highTempC = newHighTempC
+    },
+
+    set setLowTempC(newLowTempC) {
+        this.lowTempC = newLowTempC
+    },
+
+    set setHighTempF(newHighTempF) {
+        this.highTempF = newHighTempF
+    },
+
+    set setLowTempF(newLowTempF) {
+        this.lowTempF = newLowTempF
+    },
+
+    set setPrecip(newPrecip) {
+        this.precip = newPrecip
+    },
+
+}
+
+
+export { today, tomorrow, nextday }

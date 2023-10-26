@@ -1,6 +1,4 @@
-import { today, otherDays } from './object.js'
-
-const days = {}
+import { today, tomorrow, nextday } from './object.js'
 
 const todayWeather = document.querySelector('#today-weather');
 
@@ -11,7 +9,8 @@ async function getForecastWeather() {
   console.log(weatherData.forecast)
 
   setTodayForecastInfo(weatherData)
-
+  setTomorrowForecastInfo(weatherData)
+  setNextDayForecastInfo(weatherData)
 }
 
 async function getCurrentWeather() {
@@ -20,7 +19,30 @@ async function getCurrentWeather() {
     const weatherData = await response.json()
 
     setTodayCurrentInfo(weatherData)
-    //console.log(weatherData.current)
+}
+
+function setNextDayForecastInfo(weatherData) {
+    nextday.setHeader = 'Weekday'
+    nextday.setIcon = weatherData.forecast.forecastday[2].day.condition.icon
+
+    nextday.setHighTempC = weatherData.forecast.forecastday[2].day.maxtemp_c
+    nextday.setLowTempC = weatherData.forecast.forecastday[2].day.mintemp_c
+    nextday.setHighTempF = weatherData.forecast.forecastday[2].day.maxtemp_f
+    nextday.setLowTempF = weatherData.forecast.forecastday[2].day.mintemp_f
+
+    tomorrow.setPrecip = weatherData.forecast.forecastday[2].day.daily_chance_of_rain
+}
+
+function setTomorrowForecastInfo(weatherData) {
+    tomorrow.setHeader = 'Tomorrow'
+    tomorrow.setIcon = weatherData.forecast.forecastday[1].day.condition.icon
+
+    tomorrow.setHighTempC = weatherData.forecast.forecastday[1].day.maxtemp_c
+    tomorrow.setLowTempC = weatherData.forecast.forecastday[1].day.mintemp_c
+    tomorrow.setHighTempF = weatherData.forecast.forecastday[1].day.maxtemp_f
+    tomorrow.setLowTempF = weatherData.forecast.forecastday[1].day.mintemp_f
+
+    tomorrow.setPrecip = weatherData.forecast.forecastday[1].day.daily_chance_of_rain
 }
 
 function setTodayCurrentInfo(weatherData) {
