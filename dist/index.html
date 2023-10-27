@@ -9,16 +9,43 @@
     <script src="main.js" defer></script>
 
     <div id="header">
-      <div id="logo">Weather</div>
-      <div id="search">Search</div>
-      <div id="temp-converter">C/F</div>
+      <div class="logo">Weather</div>
+      <div class="search">Search</div>
+      <div class="temp-converter">C/F</div>
     </div>
     <div id="main">
       <div id="today-weather">
-        
+        <div class="today-heading">
+          <div class="location"></div>
+          <div class="date"></div>
+        </div>
+        <div class="today-main-info">
+          <div class="today-icon-info"></div>
+          <div class="today-condition-info"></div>
+        </div>
+        <div class="today-other-info">
+          <div class="wind"></div>
+          <div class="today-precip"></div>
+          <div class="humidity"></div>
+          <div class="uv-index"></div>
+          <div class="sunrise"></div>
+          <div class="sunset"></div>
+        </div>
       </div>
-      <div id="tmrw-weather"></div>
-      <div id="next-weather"></div>
+      <div id="tomorrow-weather">
+        <div class="tomorrow-heading"></div>
+        <div class="tomorrow-main-info">
+          <div class="tomorrow-icon"></div>
+          <div class="tomorrow-condition-info"></div>
+        </div>
+      </div>
+      <div id="next-weather">
+        <div class="next-heading"></div>
+        <div class="next-main-info">
+          <div class="next-icon"></div>
+          <div class="next-condition-info"></div>
+        </div>
+      </div>
     </div>
 
   </body>
