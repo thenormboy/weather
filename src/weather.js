@@ -1,7 +1,5 @@
 import { today, tomorrow, nextday } from './object.js'
 
-const todayWeather = document.querySelector('#today-weather');
-
 async function getForecastWeather() {
   const response = await fetch('http://api.weatherapi.com/v1/forecast.json?key=0d4b53107f7e4a1099e195400231810&q=Paris&days=3',
     {mode: 'cors'});
@@ -50,7 +48,13 @@ function setTodayCurrentInfo(weatherData) {
     today.location.setRegion = weatherData.location.region
     today.location.setCountry = weatherData.location.country
 
+    const location = document.querySelector('.location')
+    let locationValue = today.location.getCity + ', ' + today.location.getRegion + ', ' + today.location.getCountry
+    location.textContent = locationValue
+
+    const date = document.querySelector('.date')
     today.setDate = weatherData.current.last_updated
+    date.textContent = today.getDate
 
     today.mainInfo.setTemperatureC = weatherData.current.temp_c
     today.mainInfo.setTemperatureF = weatherData.current.temp_f
@@ -80,6 +84,18 @@ function setTodayForecastInfo(weatherData) {
   
     today.otherInfo.setSunrise = weatherData.forecast.forecastday[0].astro.sunrise
     today.otherInfo.setSunset = weatherData.forecast.forecastday[0].astro.sunset
+}
+
+function setCurrentWeather() {
+
+    getCurrentWeather()
+    getForecastWeather()
+
+    const location = document.querySelector('.location')
+
+    let locationValue = today.location.getCity + ', ' + today.location.getRegion + ', ' + today.location.getCountry
+
+    location.value = locationValue
 }
 
 export {
